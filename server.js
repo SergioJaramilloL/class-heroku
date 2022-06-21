@@ -4,7 +4,7 @@ const cors = require("cors");
 const { connect } = require("./src/db");
 const videoRouter = require("./src/routes/video");
 
-const port = 8080;
+const port = process.env.PORT || 8080;
 const app = express();
 connect();
 
@@ -15,7 +15,7 @@ app.use(cors());
 app.use("/videos", videoRouter);
 
 app.listen(port, () => {
-  console.log("App running OK");
+  console.log("App running OK heroku");
 });
 
 //MVC
